@@ -6,11 +6,9 @@
 #    By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 15:01:51 by lmoheyma          #+#    #+#              #
-#    Updated: 2024/06/07 22:48:49 by lmoheyma         ###   ########.fr        #
+#    Updated: 2024/06/07 22:50:16 by lmoheyma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-from math import isnan
 
 def NULL_not_found(object : any) -> int:
 	object_type = type(object)

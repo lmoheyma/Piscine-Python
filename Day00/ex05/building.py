@@ -6,7 +6,7 @@
 #    By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 21:20:56 by lmoheyma          #+#    #+#              #
-#    Updated: 2024/06/07 22:29:16 by lmoheyma         ###   ########.fr        #
+#    Updated: 2024/06/07 22:50:25 by lmoheyma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,6 @@ def main():
 	except AssertionError as e:
 		print(e)
 		sys.exit(1)
-	
-			
 
 if __name__ == "__main__":
 	main()
