@@ -1,18 +1,26 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    format_ft_time.py                                  :+:      :+:    :+:    #
+#    tester.py                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/02 17:50:28 by lmoheyma          #+#    #+#              #
-#    Updated: 2024/06/06 12:56:55 by lmoheyma         ###   ########.fr        #
+#    Created: 2024/06/06 12:59:03 by lmoheyma          #+#    #+#              #
+#    Updated: 2024/06/06 12:59:24 by lmoheyma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import time
-from datetime import datetime
+from find_ft_type import all_thing_is_obj
 
-seconds = time.time()
-print(f"Seconds since January 1, 1970: {seconds:,.4f} or {seconds:.2e} in scientific notation")
-print(datetime.now().strftime("%B %d %Y"))
+ft_list = ["Hello", "tata!"]
+ft_tuple = ("Hello", "toto!")
+ft_set = {"Hello", "tutu!"}
+ft_dict = {"Hello" : "titi!"}
+
+all_thing_is_obj(ft_list)
+all_thing_is_obj(ft_tuple)
+all_thing_is_obj(ft_set)
+all_thing_is_obj(ft_dict)
+all_thing_is_obj("Brian")
+all_thing_is_obj("Toto")
+print(all_thing_is_obj(10))
