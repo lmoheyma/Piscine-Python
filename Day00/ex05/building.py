@@ -6,13 +6,23 @@
 #    By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/07 21:20:56 by lmoheyma          #+#    #+#              #
-#    Updated: 2024/06/07 22:50:25 by lmoheyma         ###   ########.fr        #
+#    Updated: 2024/06/08 21:19:45 by lmoheyma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import sys
 
 def parser(string: str):
+	"""
+	Parse the string porvided and returns informations
+	about it, exemple :
+		- Number of characters
+		- Number of lower letters
+		- Number of upper letters
+		- Number of punctuation letters
+		- Number of whitespaces
+		- Number of digits
+	"""
 	punctuationMarks = 0
 	
 	print(f" The text contains {len(string)} characters:")
@@ -26,6 +36,11 @@ def parser(string: str):
 	print(f"{sum(1 for c in string if c.isdigit())} digits")
 
 def main():
+	"""
+	It uses the string provided in arguments of the program
+	If None or nothing is provided, the user is prompted to provide a string.
+	If more than one argument is provided to the program, it raises an AssertionError.
+	"""
 	try:
 		if len(sys.argv) < 2:
 			try:

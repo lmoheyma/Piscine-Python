@@ -6,13 +6,19 @@
 #    By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/08 15:41:36 by lmoheyma          #+#    #+#              #
-#    Updated: 2024/06/08 16:33:49 by lmoheyma         ###   ########.fr        #
+#    Updated: 2024/06/08 21:30:22 by lmoheyma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 import sys
 
 def stringToMorse(string: str) -> str:
+	"""
+	Encodes the string in argument in Morse Code
+	An alphanumeric character is represented by dots . and dashes -
+	Complete morse characters are separated by a single space
+	A space character is represented by a slash /
+	"""
 	NESTED_MORSE = {" ": "/",
 		"A": ".-",
 		"B": "-...",
@@ -60,6 +66,11 @@ def stringToMorse(string: str) -> str:
 		i += 1
 
 def main():
+	"""
+	If the number of arguments is different from 1, or if the type of any argument is wrong,
+	the program prints an AssertionError.
+	If characters of the string are differents than alphanum or spaces, it raises an AssertionError
+	"""
 	try:
 		if len(sys.argv) != 2:
 			raise AssertionError("AssertionError: the arguments are bad")

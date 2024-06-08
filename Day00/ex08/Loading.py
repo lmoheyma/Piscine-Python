@@ -6,11 +6,15 @@
 #    By: lmoheyma <lmoheyma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/08 16:36:52 by lmoheyma          #+#    #+#              #
-#    Updated: 2024/06/08 21:12:37 by lmoheyma         ###   ########.fr        #
+#    Updated: 2024/06/08 21:31:37 by lmoheyma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 def ft_tqdm(lst: range):
+	"""
+	It reproduces the comportment of the function tqdm
+	It shows pourcent and a loading bar
+	"""
 	count = len(lst)
 	def show(j):
 		x = int(85 * j / count)
