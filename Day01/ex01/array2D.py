@@ -1,4 +1,7 @@
 def slice_me(family: list, start: int, end: int) -> list:
+    if not isinstance(family, list):
+        print("Type Error")
+        exit(1)
     num_row = len(family)
     num_col = len(family[0])
     for i in range(num_row):
