@@ -2,6 +2,7 @@ from load_image import ft_load
 import numpy as np
 from PIL import Image
 
+
 def zoom(path: str) -> None:
     """
     Takes a path of a file in parameter, print some information,
@@ -18,12 +19,14 @@ def zoom(path: str) -> None:
     print(np_img)
     imCrop.show()
 
+
 def main():
     """
     Execute the zoom function with the filename
     """
     zoom("animal.jpeg")
     return 0
+
 
 if __name__ == "__main__":
     main()
