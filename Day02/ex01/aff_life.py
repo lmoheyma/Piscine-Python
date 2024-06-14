@@ -4,9 +4,13 @@ from load_csv import load
 
 def aff_life(campus: str, path: str) -> None:
 	df = load(path)
-	sub_df = df[df['country'] == 'France']
-	print(sub_df)
-	sub_df.plot()
+	# print(df)
+	temp = df[df['country'] == 'France']
+	xValues = temp.columns[1:]
+	print(xValues)
+	xValues = xValues.astype(str)
+	yValues = temp.iloc[0, 1:].values
+	df.plot(xValues, yValues, label='france', title='France life expectancy Projections')
 	plt.show()
 
 def main():
