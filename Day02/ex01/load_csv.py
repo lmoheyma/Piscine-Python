@@ -2,6 +2,10 @@ import pandas as pd
 
 
 def load(path: str) -> pd.core.frame.DataFrame:
+    """
+    Takes a path as argument, writes the dimensions of the data set
+    and returns it.
+    """
     try:
         data = pd.read_csv(path)
     except IOError:
