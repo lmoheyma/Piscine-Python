@@ -1,7 +1,8 @@
 from matplotlib import pyplot as plt
 from load_csv import load
 
-def convert_million_to_float(value):
+
+def conv_m_to_f(value):
     """
     Convert a string in float
     If value end with M -> multiply by 100000
@@ -17,8 +18,8 @@ def convert_million_to_float(value):
 
 def aff_pop(path: str) -> None:
     """
-    Calls the load function, loads the file life_expectancy_years.csv, 
-    and displays the country information of France versus Belgium 
+    Calls the load function, loads the file life_expectancy_years.csv,
+    and displays the country information of France versus Belgium
     """
     df = load(path)
     france_df = df[df['country'] == 'France']
@@ -30,22 +31,25 @@ def aff_pop(path: str) -> None:
     france_df.columns = ['Year', 'Population']
     belgium_df.columns = ['Year', 'Population']
     france_df['Year'] = france_df['Year'].astype(int)
-    france_df['Population'] = france_df['Population'].astype(str)
     belgium_df['Year'] = belgium_df['Year'].astype(int)
-    belgium_df['Population'] = belgium_df['Population'].astype(str)
-    france_df['Population'] = france_df['Population'].apply(convert_million_to_float)
-    belgium_df['Population'] = belgium_df['Population'].apply(convert_million_to_float)
-    france_df = france_df[(france_df['Year'] >= 1800) & (france_df['Year'] <= 2050)]
-    belgium_df = belgium_df[(belgium_df['Year'] >= 1800) & (belgium_df['Year'] <= 2050)]
-    plt.plot(france_df['Year'], france_df['Population'])
-    plt.plot(belgium_df['Year'], belgium_df['Population'])
+    france_df['Population'] = france_df['Population'].apply(conv_m_to_f)
+    belgium_df['Population'] = belgium_df['Population'].apply(conv_m_to_f)
+    france_df = france_df[(france_df['Year'] >= 1800)
+                          & (france_df['Year'] <= 2050)]
+    belgium_df = belgium_df[(belgium_df['Year'] >= 1800)
+                            & (belgium_df['Year'] <= 2050)]
+    plt.plot(france_df['Year'], france_df['Population'], label='France')
+    plt.plot(belgium_df['Year'], belgium_df['Population'], label='Belgium')
     plt.title('Population Projections')
     plt.xlabel('Year')
-    plt.xticks(france_df['Year'][::40], rotation=45)
-    # y_ticks = [i * 1e7 for i in range(int(m / 1e7) + 1)]
-    # plt.yticks(y_ticks, ["{:,.0f}M".format(pop / 1e6) for pop in y_ticks])
+    plt.xticks(france_df['Year'][::40], rotation=0)
+    max_population = max(max(france_df['Population'][::20]),
+                         max(belgium_df['Population'][::20]))
+    y_ticks = [i * 2e7 for i in range(1, int(max_population / 2e7) + 1)]
+    plt.yticks(y_ticks, ["{:,.0f}M".format(pop / 1e6) for pop in y_ticks])
     plt.ylabel('Population')
     plt.tight_layout()
+    plt.legend(loc='lower right')
     plt.show()
 
 

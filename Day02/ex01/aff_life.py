@@ -4,7 +4,7 @@ from load_csv import load
 
 def aff_life(path: str) -> None:
     """
-    Calls the load function, loads the file life_expectancy_years.csv, 
+    Calls the load function, loads the file life_expectancy_years.csv,
     and displays the country information of France.
     """
     df = load(path)
@@ -17,10 +17,11 @@ def aff_life(path: str) -> None:
     plt.plot(france_df['Year'], france_df['Life Expectancy'])
     plt.title('France Life expectancy Projections')
     plt.xlabel('Year')
-    plt.xticks(france_df['Year'][::40], rotation=45)
+    plt.xticks(france_df['Year'][::40], rotation=0)
     plt.ylabel('Life Expectancy')
     plt.tight_layout()
     plt.show()
+
 
 def main():
     """
