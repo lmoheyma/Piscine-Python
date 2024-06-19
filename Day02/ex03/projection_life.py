@@ -3,6 +3,14 @@ from matplotlib import pyplot as plt
 
 
 def main():
+    """
+    Calls the load function, loads the files
+    "income_per_person_gdppercapita_ppp_inflation_adjusted.csv"
+    and "life_expectancy_years.csv",
+    and displays the projection of life expectancy in relation
+    to the gross national product of
+    the year 1900 for each country.
+    """
     inflation = \
         load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
     life_expectancy = load("life_expectancy_years.csv")
