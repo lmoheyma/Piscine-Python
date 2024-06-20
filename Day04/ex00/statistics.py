@@ -1,10 +1,5 @@
-# from statistics import median
-
-
 def median(values: tuple) -> int:
-	print(values)
 	length = len(values)
-	# index += 1
 	if length % 2 == 0:
 		median1 = values[length // 2]
 		print(median1)
@@ -14,24 +9,24 @@ def median(values: tuple) -> int:
 	else:
 		return values[length // 2]
 
+
 def ft_statistics(*args: any, **kwargs: any) -> None:
-	# print(args, type(args), len(args))
 	length = len(args)
+	if length == 0:
+		print("ERROR")
 	sortedTuple = sorted(args)
-	for key, value in  kwargs.items():
-		match value:
-			case 'mean':
-				print(f"mean: {sum(args) / length}")
-			case 'quartile':
-				mid = len(sortedTuple) // 2
-				
-				if len(sortedTuple) % 2 == 0:
-					print(f"quartile: {[median(sortedTuple[:mid]), median(sortedTuple[mid:])]}")
-				else:
-					print(f"quartile: {[median(sortedTuple[:mid]), median(sortedTuple[mid + 1:])]}")
-			case 'std':
-				print()
-			case 'var':
-				print()
-			case _:
-				print("ERROR")
+	for key, value in kwargs.items():
+		if length != 0:
+			match value:
+				case 'mean':
+					print(f"mean: {sum(args) / length}")
+				case 'median':
+					print(f"median: {median(sortedTuple)}")
+				case 'quartile':
+					print(f"quartile: {[sortedTuple[length // 4], sortedTuple[length // 4 * 3]]}")
+				case 'std':
+					print(f"std: {sum(args) - }")
+				case 'var':
+					print(f"var: ")
+				case _:
+					print("ERROR")
