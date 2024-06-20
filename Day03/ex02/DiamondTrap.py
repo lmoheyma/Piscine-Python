@@ -9,9 +9,6 @@ class King(Baratheon, Lannister):
         as first parameter
         A King has brown eyes and dark hairs by default"""
         super().__init__(first_name=first_name, is_alive=True)
-        self.family_name = "Baratheon"
-        self.eyes = "brown"
-        self.hairs = "dark"
 
     def set_eyes(self, eyes):
         """Setter for eyes attribut"""
