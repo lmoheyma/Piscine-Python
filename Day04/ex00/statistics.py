@@ -1,4 +1,7 @@
 def median(values: tuple) -> int:
+    """
+    Calculates and returns the median of a tuple
+    """
     length = len(values)
     if length % 2 == 0:
         median1 = values[length // 2]
@@ -11,6 +14,9 @@ def median(values: tuple) -> int:
 
 
 def variance(values: tuple) -> float:
+    """
+    Calculates and returns the variance of a tuple
+    """
     mean = sum(values) / len(values)
     return sum((xi - mean) ** 2 for xi in values) / len(values)
 
