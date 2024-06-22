@@ -1,8 +1,22 @@
 def callLimit(limit: int):
+    """
+    This function takes an limiter in argument
+    and return a decorator to limit the call's
+    number of a function
+    """
     count = 0
 
     def callLimiter(function):
+        """
+        Intern function created by 'callLimit'
+        It's the decorator used to limit the call's number
+        """
         def limit_function(*args: any, **kwds: any):
+            """
+            Intern function created by 'callLimiter' to survey
+            the number of call, if the number of call is more than
+            the 'limit', its raises an AssertionError
+            """
             try:
                 nonlocal count
                 count += 1
